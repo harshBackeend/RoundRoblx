@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "1061613273381",
+    "firebase_url": "https://spinrow-51185-default-rtdb.firebaseio.com",
+    "project_id": "spinrow-51185",
+    "storage_bucket": "spinrow-51185.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061613273381:android:07729f944409b0c2e59acc",
+        "android_client_info": {
+          "package_name": "com.demo.roundRoblx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIo5dJktaF4iex2jCX4H-h15Pjtn_RBto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061613273381:android:9b51ed2663a8e0bbe59acc",
+        "android_client_info": {
+          "package_name": "com.demo.spinroblx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIo5dJktaF4iex2jCX4H-h15Pjtn_RBto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

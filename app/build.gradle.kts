@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -33,6 +34,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -45,4 +50,20 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //Project
+    implementation(libs.androidscratchcard)
+
+    //must by add
+    implementation(libs.androidx.lifecycle.process)
+    implementation(platform(libs.firebase.bom.v3281))
+    implementation(libs.firebase.database)
+
+    implementation(libs.gson)
+    implementation(libs.glide)
+
+    //flexbox for chip layout
+    implementation(libs.flexbox)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.browser)
 }
