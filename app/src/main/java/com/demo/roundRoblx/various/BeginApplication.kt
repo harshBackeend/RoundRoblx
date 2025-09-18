@@ -8,12 +8,19 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.net.Uri
+import android.util.Log
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.lifecycle.MutableLiveData
 import com.demo.roundRoblx.assignmentData.RoundStructureData
+import com.demo.roundRoblx.various.Unique.isRoundConnectingToInternet
 import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.getValue
+import com.google.gson.Gson
 
 class BeginApplication : Application() {
 
@@ -68,5 +75,45 @@ class BeginApplication : Application() {
         roundRowDataBase = FirebaseDatabase.getInstance()
         roundDataBaseReference = roundRowDataBase.getReference("round_row")
 
+
+        val roundGetDollar =
+            Unique.getRoundDataFromLocal(applicationContext, CachedHolder.CachedKey.round_rank)
+        if (Unique.isRoundEmptyString(roundGetDollar)) {
+            Unique.setRoundDataHolder(applicationContext, CachedHolder.CachedKey.round_rank, "0")
+        }
+
+        val roundSpinCount = Unique.getRoundDataFromLocal(applicationContext, CachedHolder.CachedKey.round_count)
+        if (Unique.isRoundEmptyString(roundSpinCount)) {
+            Unique.setRoundDataHolder(applicationContext, CachedHolder.CachedKey.round_count, "9")
+        }
+
+        if (isRoundConnectingToInternet()) {
+            getRoundData()
+        }else{
+            roundRowResponse.postValue(Pair(null, false))
+        }
+
     }
+
+    private fun getRoundData() {
+        roundDataBaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val remoteData: RoundStructureData? = try {
+                    snapshot.getValue<RoundStructureData>()
+                } catch (e: Exception) {
+                    null
+                }
+                Log.d("BeginApplication", "onDataChange: ${Gson().toJson(remoteData)} ------->")
+                roundRowResponse.postValue(Pair(remoteData, remoteData != null))
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.d("BeginApplication", "onCancelled: ${error.message} ------->")
+                roundRowResponse.postValue(Pair(null, false))
+            }
+
+        })
+    }
+
+
 }

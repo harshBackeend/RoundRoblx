@@ -1,6 +1,6 @@
 package com.demo.roundRoblx.various
 
-class CachedHolder {
+object CachedHolder {
 
     object CachedKey{
         const val round_mainKey = "ROUND_PARENT_DATA_HOLDER"
