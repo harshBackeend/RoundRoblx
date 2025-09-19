@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RoundRoblx</string>
+    <string name="let_s_start">Let’s Start</string>
+    <string name="rate_app">Rate App</string>
+    <string name="share_app">Share App</string>
+    <string name="privacy_policy">Privacy Policy</string>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="round_h_m">16dp</dimen>
+    <dimen name="round_t_m">16dp</dimen>
+    <dimen name="round_b_i_s">65dp</dimen>
+</resources>
