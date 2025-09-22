@@ -36,7 +36,8 @@
             android:exported="false" />
         <activity
             android:name=".Panel.StartActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/let_go_screen"/>
         <activity
             android:name=".Panel.LetGoActivity"
             android:exported="false"
