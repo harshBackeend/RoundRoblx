@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@id/round_let_main">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/buttonLetStart"
+            android:id="@+id/layoutLetStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_let_go_bu_bg"
@@ -72,7 +72,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/buttonRateApp"
+            android:id="@+id/layoutRateApp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/round_t_m"
@@ -115,7 +115,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/buttonShareApp"
+            android:id="@+id/layoutShareApp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/round_t_m"
@@ -158,7 +158,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/buttonPrivacyPolicyApp"
+            android:id="@+id/layoutPrivacyPolicyApp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/round_t_m"

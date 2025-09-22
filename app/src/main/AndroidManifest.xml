@@ -32,9 +32,15 @@
         android:theme="@style/Theme.RoundRoblx"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Panel.WorkSpaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.StartActivity"
+            android:exported="false" />
+        <activity
             android:name=".Panel.LetGoActivity"
             android:exported="false"
-            android:theme="@style/let_go_screen"/>
+            android:theme="@style/let_go_screen" />
         <activity
             android:name=".Panel.MainActivity"
             android:exported="true">

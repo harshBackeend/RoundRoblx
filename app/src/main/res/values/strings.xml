@@ -4,4 +4,7 @@
     <string name="rate_app">Rate App</string>
     <string name="share_app">Share App</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="please_on_internet">Please on Internet</string>
+
+
 </resources>
