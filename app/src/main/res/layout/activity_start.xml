@@ -12,40 +12,41 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/round_h_m"
-        android:scrollbars="none"
         android:layout_marginBottom="@dimen/round_t_m"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSkip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSkip">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageRoundStart1"
+                android:id="@+id/imageRoundStart"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:scaleType=""
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/round_t_m"
+                tools:src="@drawable/round_start_3"
                 app:layout_constraintDimensionRatio="16:9"
-                android:src="@drawable/round_start_1"
-                android:layout_marginTop="@dimen/round_t_m"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/roundMainHeadLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageRoundStart1"
-                android:textSize="18sp"
-                android:textColor="@color/black"
                 android:fontFamily="@font/round_regular"
-                tools:text="@string/round_start_title_1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageRoundStart"
+                tools:text="@string/round_start_title_4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -74,14 +75,14 @@
         style="@style/buttonSmall"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/round_h_m"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/round_h_m"
         android:layout_marginBottom="@dimen/round_t_m"
         android:background="@drawable/round_button_bg"
-        app:backgroundTint="@null"
         android:elevation="15dp"
         android:text="@string/next"
         android:textColor="@color/white"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@id/buttonLayoutHolder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -91,10 +92,15 @@
         android:id="@+id/buttonLayoutHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <include
+            android:id="@+id/headLineHolder"
+            layout="@layout/layout_round_bottom_view" />
 
     </LinearLayout>
 

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/roundBottomView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/roundBottomView"
+    android:layout_marginHorizontal="@dimen/round_h_m"
     android:visibility="gone"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:visibility="visible"
-    android:layout_marginHorizontal="@dimen/round_h_m">
+    tools:visibility="visible">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/roundImageProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearance="@style/round_image"
@@ -34,6 +34,78 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/roundHeadLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/round_bold"
+        android:freezesText="true"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/roundSubLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/textExtra"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="HeadLine" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/roundSubLine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="@font/round_semi_bold"
+        android:freezesText="true"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/roundImageProfile"
+        app:layout_constraintEnd_toEndOf="@id/roundHeadLine"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/roundHeadLine"
+        app:layout_constraintTop_toBottomOf="@+id/roundHeadLine"
+        tools:text="HeadLine" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/roundHeadLineImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:src="@color/black"
+        app:layout_constraintDimensionRatio="16:5.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundImageProfile" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/roundMainButton"
+        style="@style/buttonSmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round_button_bg"
+        android:elevation="15dp"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundHeadLineImage"
+        tools:text="@string/next" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
