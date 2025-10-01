@@ -1,8 +1,6 @@
 package com.demo.roundRoblx.Panel
 
-import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
@@ -17,6 +15,7 @@ import com.demo.roundRoblx.R
 import com.demo.roundRoblx.assignmentData.RoundStructureData
 import com.demo.roundRoblx.databinding.ActivityStartBinding
 import com.demo.roundRoblx.various.BeginApplication
+import com.demo.roundRoblx.various.CloseDialog
 import com.demo.roundRoblx.various.HeadLineView
 import com.demo.roundRoblx.various.Unique
 
@@ -153,6 +152,17 @@ class StartActivity : AppCompatActivity() {
                 }
             }
         }
+
+        binding.buttonSkip.setOnClickListener {
+            startActivity(Intent(this@StartActivity, WorkSpaceActivity::class.java))
+            if (first != null && first.round_small_2 != null && !Unique.isRoundEmptyString(first.round_status) && first.round_status == "1") {
+                BeginApplication.showRoundRowTab(
+                    this@StartActivity,
+                    first.round_small_2.random().round_main_image?.toUri()
+                )
+            }
+            finish()
+        }
     }
 
     private fun triggerBackEvent(first: RoundStructureData?) {
@@ -171,35 +181,20 @@ class StartActivity : AppCompatActivity() {
                     roundShowInfo(roundImageInfo )
                     binding.holderScroll.scrollTo(0, 0)
                 } else {
-                    ExitDialog.viewExitDialog(this@StartActivity, object : ExitDialog.DialogEvent {
-                        override fun exit() {
+                    CloseDialog.viewCloseDialog(this@StartActivity, object : CloseDialog.CloseDialogEvent {
+
+                        override fun yesEvent() {
                             finishAffinity()
                         }
 
-                        override fun rate() {
-                            try {
-                                startActivity(
-                                    Intent(
-                                        Intent.ACTION_VIEW,
-                                        Uri.parse("market://details?id=$packageName")
-                                    )
-                                )
-                            } catch (e: ActivityNotFoundException) {
-                                startActivity(
-                                    Intent(
-                                        Intent.ACTION_VIEW,
-                                        Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
-                                    )
-                                )
-                            }
+                        override fun noEvent() {
+
                         }
 
                     })
                 }
             }
-
         }
-
         onBackPressedDispatcher.addCallback(this, back)
     }
 }

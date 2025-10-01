@@ -14,7 +14,7 @@
         android:padding="16dp">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/roundTop"
+            android:id="@+id/roundTextTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/round_regular"
@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/roundBottom"
+            android:id="@+id/roundTextBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -38,7 +38,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/roundTop" />
+            app:layout_constraintTop_toBottomOf="@id/roundTextTop" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonNo"
@@ -75,7 +75,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/buttonNo"
-            app:layout_constraintTop_toBottomOf="@id/roundBottom" />
+            app:layout_constraintTop_toBottomOf="@id/roundTextBottom" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
