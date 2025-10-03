@@ -9,6 +9,7 @@
     tools:context=".Panel.WorkSpaceActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/roundHeaderLayout"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="@color/white"
@@ -68,16 +69,776 @@
                 android:layout_marginStart="6dp"
                 android:fontFamily="@font/round_p_b"
                 android:includeFontPadding="false"
-                tools:text="5000"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/roundTextHeader" />
+                app:layout_constraintTop_toBottomOf="@+id/roundTextHeader"
+                tools:text="5000" />
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundHeaderLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/roundRBXTODollar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/round_h_m"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:background="@drawable/round_let_go_bu_bg"
+                android:gravity="center_vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/roundMoneyBag"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/round_money_bag"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/rbx_to_dollar"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/roundMoneyBag"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/round_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/roundFirestLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundDollarToRBX"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextRBXToDollar"
+                        app:layout_constraintTop_toTopOf="@id/roundViewDollarToRBX" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextRBXToDollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/rbx_to_dollar"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutDollarToRBX" />
+
+                    <View
+                        android:id="@+id/roundViewDollarToRBX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutDollarToRBX"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutDollarToRBX"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutDollarToRBX"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutDollarToRBX" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutDollarToRBX"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_dollar" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundScratch"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextScratch"
+                        app:layout_constraintTop_toTopOf="@id/roundViewScratch" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextScratch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/scratch"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutScratch" />
+
+                    <View
+                        android:id="@+id/roundViewScratch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutScratch"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutScratch"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutScratch"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutScratch" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutScratch"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_scratch" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundBCToRBX"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextBCToRBX"
+                        app:layout_constraintTop_toTopOf="@id/roundViewBCToRBX" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextBCToRBX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/bc_to_rbx"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutBCToRBX" />
+
+                    <View
+                        android:id="@+id/roundViewBCToRBX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutBCToRBX"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutBCToRBX"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutBCToRBX"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutBCToRBX" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutBCToRBX"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_bc" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/roundFirestLayoutHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <include
+                    android:id="@+id/roundFirestHeadLineHolder"
+                    layout="@layout/layout_round_bottom_view" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/roundSecundLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundTBCToRBX"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextTBCToRBX"
+                        app:layout_constraintTop_toTopOf="@id/roundViewTBCToRBX" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextTBCToRBX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/tbc_to_rbx"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutTBCToRBX" />
+
+                    <View
+                        android:id="@+id/roundViewTBCToRBX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutTBCToRBX"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutTBCToRBX"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutTBCToRBX"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutTBCToRBX" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutTBCToRBX"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_tbc" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundOBCToRBX"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextOBCToRBX"
+                        app:layout_constraintTop_toTopOf="@id/roundViewOBCToRBX" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextOBCToRBX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/obc_to_rbx"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutOBCToRBX" />
+
+                    <View
+                        android:id="@+id/roundViewOBCToRBX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutOBCToRBX"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutOBCToRBX"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutOBCToRBX"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutOBCToRBX" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutOBCToRBX"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_obc" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundQuiz"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextQuiz"
+                        app:layout_constraintTop_toTopOf="@id/roundViewQuiz" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextQuiz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/quiz"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutQuiz" />
+
+                    <View
+                        android:id="@+id/roundViewQuiz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutQuiz"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutQuiz"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutQuiz"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutQuiz" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutQuiz"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_quiz" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/roundThreadLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundSpinWheels"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextSpinWheels"
+                        app:layout_constraintTop_toTopOf="@id/roundViewSpinWheels" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextSpinWheels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/spin_wheels"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutSpinWheels" />
+
+                    <View
+                        android:id="@+id/roundViewSpinWheels"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutSpinWheels"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutSpinWheels"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutSpinWheels"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutSpinWheels" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutSpinWheels"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_spin_wheels" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundMeme"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextMeme"
+                        app:layout_constraintTop_toTopOf="@id/roundViewMeme" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextMeme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/meme"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutMeme" />
+
+                    <View
+                        android:id="@+id/roundViewMeme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutMeme"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutMeme"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutMeme"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutMeme" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutMeme"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_meme" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/roundTipsTricks"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/round_work_button_bg"
+                        android:gravity="center"
+                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextTipsTricks"
+                        app:layout_constraintTop_toTopOf="@id/roundViewTipsTricks" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/roundTextTipsTricks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/round_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/tips_tricks"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/roundLayoutTipsTricks" />
+
+                    <View
+                        android:id="@+id/roundViewTipsTricks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundLayoutTipsTricks"
+                        app:layout_constraintEnd_toEndOf="@id/roundLayoutTipsTricks"
+                        app:layout_constraintStart_toStartOf="@id/roundLayoutTipsTricks"
+                        app:layout_constraintTop_toTopOf="@id/roundLayoutTipsTricks" />
+
+                    <LinearLayout
+                        android:id="@+id/roundLayoutTipsTricks"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/round_work_bg"
+                        android:gravity="center"
+                        android:padding="7dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/round_tips" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/roundDictionary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/round_h_m"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:background="@drawable/round_let_go_bu_bg"
+                android:gravity="center_vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/roundImageDictionary"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/round_dictionary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/dictionary"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/roundImageDictionary"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/round_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/roundSecundLayoutHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <include
+                    android:id="@+id/roundSecundHeadLineHolder"
+                    layout="@layout/layout_round_bottom_view" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/roundSetting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/round_h_m"
+                android:layout_marginVertical="@dimen/round_t_m"
+                android:background="@drawable/round_let_go_bu_bg"
+                android:gravity="center_vertical"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/roundImageSetting"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/round_setting"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/setting"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/roundImageSetting"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/round_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

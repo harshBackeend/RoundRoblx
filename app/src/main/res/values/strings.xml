@@ -19,6 +19,17 @@
     <string name="no">No</string>
     <string name="yes_exit">Yes, Exit</string>
     <string name="get_daily_robox">Get Daily Robox</string>
+    <string name="rbx_to_dollar">RBX To Dollar</string>
+    <string name="scratch">Scratch</string>
+    <string name="bc_to_rbx">BC To RBX</string>
+    <string name="tbc_to_rbx">TBC To RBX</string>
+    <string name="obc_to_rbx">OBC To RBX</string>
+    <string name="quiz">Quiz</string>
+    <string name="spin_wheels">Spin Wheels</string>
+    <string name="meme">Meme</string>
+    <string name="tips_tricks"><![CDATA[Tips & Tricks]]></string>
+    <string name="dictionary">Dictionary</string>
+    <string name="setting">Setting</string>
 
 
 </resources>
