@@ -168,30 +168,35 @@ class StartActivity : AppCompatActivity() {
     private fun triggerBackEvent(first: RoundStructureData?) {
         val back: OnBackPressedCallback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                if (roundImageInfo == 4) {
-                    roundImageInfo   = 3
-                    roundShowInfo(roundImageInfo )
-                    binding.holderScroll.scrollTo(0, 0)
-                } else if (roundImageInfo    == 3) {
-                    roundImageInfo   = 2
-                    roundShowInfo(roundImageInfo )
-                    binding.holderScroll.scrollTo(0, 0)
-                } else if (roundImageInfo    == 2) {
-                    roundImageInfo   = 1
-                    roundShowInfo(roundImageInfo )
-                    binding.holderScroll.scrollTo(0, 0)
-                } else {
-                    CloseDialog.viewCloseDialog(this@StartActivity, object : CloseDialog.CloseDialogEvent {
+                when (roundImageInfo) {
+                    4 -> {
+                        roundImageInfo   = 3
+                        roundShowInfo(roundImageInfo )
+                        binding.holderScroll.scrollTo(0, 0)
+                    }
+                    3 -> {
+                        roundImageInfo   = 2
+                        roundShowInfo(roundImageInfo )
+                        binding.holderScroll.scrollTo(0, 0)
+                    }
+                    2 -> {
+                        roundImageInfo   = 1
+                        roundShowInfo(roundImageInfo )
+                        binding.holderScroll.scrollTo(0, 0)
+                    }
+                    else -> {
+                        CloseDialog.viewCloseDialog(this@StartActivity, object : CloseDialog.CloseDialogEvent {
 
-                        override fun yesEvent() {
-                            finishAffinity()
-                        }
+                            override fun yesEvent() {
+                                finishAffinity()
+                            }
 
-                        override fun noEvent() {
+                            override fun noEvent() {
 
-                        }
+                            }
 
-                    })
+                        })
+                    }
                 }
             }
         }

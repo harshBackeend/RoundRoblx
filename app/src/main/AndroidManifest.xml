@@ -32,12 +32,42 @@
         android:theme="@style/Theme.RoundRoblx"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Panel.WordListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.TutorialFullActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.TutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.FunnyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.LuckySpinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.UserSettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.BeginBrainTextActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.BrainTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.CanvasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Panel.ExchangeActivity"
+            android:exported="false" />
+        <activity
             android:name=".Panel.WorkSpaceActivity"
             android:exported="false" />
         <activity
             android:name=".Panel.StartActivity"
             android:exported="false"
-            android:theme="@style/let_go_screen"/>
+            android:theme="@style/let_go_screen" />
         <activity
             android:name=".Panel.LetGoActivity"
             android:exported="false"

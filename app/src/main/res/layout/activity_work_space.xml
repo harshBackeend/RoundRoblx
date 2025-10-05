@@ -155,12 +155,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextRBXToDollar"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextRBXToDollar"
                         app:layout_constraintTop_toTopOf="@id/roundViewDollarToRBX" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -216,12 +216,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextScratch"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextScratch"
                         app:layout_constraintTop_toTopOf="@id/roundViewScratch" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -277,12 +277,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextBCToRBX"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextBCToRBX"
                         app:layout_constraintTop_toTopOf="@id/roundViewBCToRBX" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -364,12 +364,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextTBCToRBX"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextTBCToRBX"
                         app:layout_constraintTop_toTopOf="@id/roundViewTBCToRBX" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -425,12 +425,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextOBCToRBX"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextOBCToRBX"
                         app:layout_constraintTop_toTopOf="@id/roundViewOBCToRBX" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -486,12 +486,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextQuiz"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextQuiz"
                         app:layout_constraintTop_toTopOf="@id/roundViewQuiz" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -557,12 +557,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextSpinWheels"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextSpinWheels"
                         app:layout_constraintTop_toTopOf="@id/roundViewSpinWheels" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -618,12 +618,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextMeme"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextMeme"
                         app:layout_constraintTop_toTopOf="@id/roundViewMeme" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -679,12 +679,12 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginBottom="-12dp"
                         android:background="@drawable/round_work_button_bg"
                         android:gravity="center"
-                        android:layout_marginBottom="-12dp"
+                        app:layout_constraintBottom_toBottomOf="@id/roundTextTipsTricks"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="@id/roundTextTipsTricks"
                         app:layout_constraintTop_toTopOf="@id/roundViewTipsTricks" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -833,7 +833,6 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
         </LinearLayout>
