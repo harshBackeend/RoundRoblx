@@ -7,4 +7,254 @@
     android:layout_height="match_parent"
     tools:context=".Panel.ExchangeActivity">
 
+    <include
+        android:id="@+id/roundAppBar"
+        layout="@layout/app_bar_layout" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/round_t_m"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/biloImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundAppBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/roundTopLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/round_h_m"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:background="@drawable/round_exchange"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintDimensionRatio="16:8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/roundQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/roundStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/let_s_start" />
+
+                <EditText
+                    android:id="@+id/roundEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/round_edit_bg"
+                    android:fontFamily="@font/round_regular"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="numberDecimal"
+                    android:padding="14dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black_a_50"
+                    android:textSize="18sp"
+                    tools:hint="Enter" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/roundTextE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/md_theme_error"
+                    android:textSize="12sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/roundStart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/let_s_start"
+                    tools:visibility="visible" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonConvertNow"
+                    style="@style/buttonSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/round_button_bg"
+                    android:text="@string/convert_now"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/roundMembershipLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/round_h_m"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roundTopLayout"
+                tools:visibility="visible">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/roundMembershipTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="@string/let_s_start" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/roundMembershipMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/round_t_m"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/black_a_50"
+                    android:textSize="18sp"
+                    tools:text="@string/let_s_start" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/roundMembershipYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/round_t_m"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/black_a_50"
+                    android:textSize="18sp"
+                    tools:text="@string/let_s_start" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/roundMembershipSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/round_t_m"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/black_a_50"
+                    android:textSize="18sp"
+                    tools:text="@string/let_s_start" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/roundMembershipSecundSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/round_regular"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/black_a_50"
+                    android:textSize="14sp"
+                    tools:text="@string/let_s_start" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/buttonLayoutHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roundMembershipLayout">
+
+                <include
+                    android:id="@+id/headLineHolder"
+                    layout="@layout/layout_round_bottom_view" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/roundReceived"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/round_h_m"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:fontFamily="@font/round_regular"
+                android:includeFontPadding="false"
+                android:text="@string/you_will_receive"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonLayoutHolder"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/roundExchangeAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:background="@drawable/round_button_a_20_bg"
+                android:fontFamily="@font/round_regular"
+                android:paddingHorizontal="45dp"
+                android:paddingVertical="15dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roundReceived"
+                tools:text="0.00" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDone"
+                style="@style/buttonSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:paddingHorizontal="45dp"
+                android:layout_marginBottom="@dimen/round_t_m"
+                android:background="@drawable/round_button_bg"
+                android:text="@string/done"
+                android:textColor="@color/white"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roundExchangeAmount" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/biloImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:adjustViewBounds="true"
+        android:maxHeight="@dimen/round_b_i_s"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

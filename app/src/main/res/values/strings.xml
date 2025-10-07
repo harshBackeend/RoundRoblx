@@ -30,6 +30,9 @@
     <string name="tips_tricks"><![CDATA[Tips & Tricks]]></string>
     <string name="dictionary">Dictionary</string>
     <string name="setting">Setting</string>
+    <string name="convert_now">Convert Now</string>
+    <string name="you_will_receive">You Will Receive:-</string>
+    <string name="done">Done</string>
 
 
 </resources>
