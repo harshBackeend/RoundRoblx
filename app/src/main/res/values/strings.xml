@@ -34,5 +34,42 @@
     <string name="you_will_receive">You Will Receive:-</string>
     <string name="done">Done</string>
 
+    <!--RBX To Dollar-->
+    <string name="round_rbx_to_dollar_converter_t">Rbx To Dollar Converter</string>
+    <string name="round_enter_your_rbx_q">Enter Your Rbx</string>
+    <string name="round_enter_number_of_rbx_q_h">Enter Number Of Rbx</string>
+
+    <!--Dollar_to_rbx-->
+    <string name="round_do_to_t">Dollar To Rbx Converter</string>
+    <string name="round_enter_your_dollar_q">Enter Your Dollar</string>
+    <string name="round_enter_number_of_dollar_q_h">Enter Number Of Dollar</string>
+
+    <!--b_t_R-->
+    <string name="round_b_to_r">BC To Rbx Converter</string>
+    <string name="round_enter_your_b_q">Enter Your Dollar</string>
+    <string name="round_enter_number_of_b_q_h">Enter Number Of Bc</string>
+
+    <!--t_t_R-->
+    <string name="round_t_to_r">Tbc To Rbx Converter</string>
+    <string name="round_enter_your_t_q">Enter Your Tbc</string>
+    <string name="round_enter_number_of_t_q_h">Enter Number Of Tbc</string>
+
+    <!--o_t_R-->
+    <string name="round_o_to_r">Obc To Rbx Converter</string>
+    <string name="round_enter_your_o_q">Enter Your Obc</string>
+    <string name="round_enter_number_of_o_q_h">Enter Number Of Obc</string>
+
+    <string name="error_please">Please %1$s</string>
+    <string name="robox_turbo_membership_calculator">Robox Turbo MemberShip Calculator</string>
+    <string name="_1_month_900_r">1 Month = 900 R$</string>
+    <string name="_1_year_1200_r">1 Year = 1200 R$</string>
+    <string name="tbc_stands_for_turbo_membership">Tbc Stands For Turbo Membership:-</string>
+    <string name="a_subscription_that_provides_even_morebenefits_and_features_compared_to_tbc">A Subscription That Provides Even MoreBenefits And Features Compared To TBC.</string>
+    <string name="robox_outrageous_membership_calculator">Robox Outrageous Membership Calculator</string>
+    <string name="_1_month_700_r">1 Month = 700 R$</string>
+    <string name="_1_year_1400_r">1 Year = 1400 R$</string>
+    <string name="obc_stands_for_outrageous_membership">Obc Stands For Outrageous Membership:-</string>
+    <string name="a_premium_subscription_that_grants_exclusive_perks_on_robox">A Premium Subscription That Grants Exclusive Perks On Robox.</string>
+
 
 </resources>

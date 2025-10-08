@@ -56,8 +56,8 @@ class WorkSpaceActivity : AppCompatActivity() {
         }
 
         binding.roundFirestHeadLineHolder.roundSubLine.isSelected = true
-        binding.roundFirestHeadLineHolder.roundSubLine.isSelected = true
         binding.roundFirestHeadLineHolder.roundHeadLine.isSelected = true
+        binding.roundSecundHeadLineHolder.roundSubLine.isSelected = true
         binding.roundSecundHeadLineHolder.roundHeadLine.isSelected = true
 
     }
