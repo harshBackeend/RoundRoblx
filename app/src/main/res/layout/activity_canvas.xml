@@ -7,4 +7,56 @@
     android:layout_height="match_parent"
     tools:context=".Panel.CanvasActivity">
 
+    <include
+        android:id="@+id/roundAppBar"
+        layout="@layout/app_bar_layout" />
+
+    <LinearLayout
+        android:id="@+id/layoutMoney"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="30dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundAppBar">
+
+        <ImageView
+            android:id="@+id/imageMoneyHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/round_money_box" />
+
+    </LinearLayout>
+
+    <in.myinnos.androidscratchcard.ScratchCard
+        android:id="@+id/roundCanvas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="@id/layoutMoney"
+        app:layout_constraintStart_toStartOf="@id/layoutMoney"
+        app:layout_constraintTop_toTopOf="@id/layoutMoney"
+        app:layout_constraintBottom_toBottomOf="@id/layoutMoney" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayoutHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/round_t_m"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include
+            android:id="@+id/headLineHolder"
+            layout="@layout/layout_round_bottom_view" />
+
+    </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

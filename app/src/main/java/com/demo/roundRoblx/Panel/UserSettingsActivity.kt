@@ -118,6 +118,10 @@ class UserSettingsActivity : AppCompatActivity() {
                 ).show()
             }
         }
+
+        binding.roundAppBar.roundPreviousButton.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 
     private fun triggerBackEvent(first: RoundStructureData?) {
