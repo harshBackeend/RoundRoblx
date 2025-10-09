@@ -9,6 +9,7 @@ import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.demo.roundRoblx.R
 import com.demo.roundRoblx.assignmentData.RoundStructureData
 import com.demo.roundRoblx.databinding.ActivityExchangeBinding
@@ -17,6 +18,8 @@ import com.demo.roundRoblx.various.CachedHolder
 import com.demo.roundRoblx.various.CloseDialog
 import com.demo.roundRoblx.various.HeadLineView
 import com.demo.roundRoblx.various.Unique
+import com.demo.roundRoblx.various.Unique.roundDismissKeyboardFrom
+import java.text.DecimalFormat
 
 class ExchangeActivity : AppCompatActivity() {
 
@@ -61,15 +64,24 @@ class ExchangeActivity : AppCompatActivity() {
 
     private fun definedInfo(first: RoundStructureData) {
 
-        if (first.round_big != null) {
-            HeadLineView.headLineView(
-                this@ExchangeActivity,
-                first,
-                binding.headLineHolder
-            )
-        } else {
-            binding.buttonLayoutHolder.visibility = View.GONE
+        if (first.round_small_2 != null) {
+            binding.biloImage.setOnClickListener {
+                BeginApplication.showRoundRowTab(
+                    this@ExchangeActivity,
+                    first.round_small_2.random().round_main_image?.toUri()
+                )
+            }
         }
+
+        if (first.round_small != null) {
+            binding.biloImage.visibility = View.VISIBLE
+            Glide.with(binding.biloImage)
+                .load(first.round_small.random().round_main_image)
+                .into(binding.biloImage)
+        } else {
+            binding.biloImage.visibility = View.GONE
+        }
+
     }
 
     private fun getInfoFromOtherView() {
@@ -152,7 +164,95 @@ class ExchangeActivity : AppCompatActivity() {
     }
 
     private fun triggerPushEvent(first: RoundStructureData?) {
+        binding.apply {
+            buttonConvertNow.setOnClickListener {
+                if (!Unique.isRoundEmptyString(roundEditText.text.toString())) {
+                    generateResult()
+                    roundTextE.visibility = View.GONE
+                    roundReceived.visibility = View.VISIBLE
+                    roundExchangeAmount.visibility = View.VISIBLE
+                    buttonDone.visibility = View.VISIBLE
 
+                    if (first != null && first.round_small_2 != null && !Unique.isRoundEmptyString(
+                            first.round_status
+                        ) && first.round_status == "1"
+                    ) {
+                        if (first.round_big != null) {
+                            buttonLayoutHolder.visibility = View.VISIBLE
+                            HeadLineView.headLineView(
+                                this@ExchangeActivity,
+                                first,
+                                binding.headLineHolder
+                            )
+                        } else {
+                            buttonLayoutHolder.visibility = View.GONE
+                        }
+                    } else {
+                        buttonLayoutHolder.visibility = View.GONE
+                    }
+
+                } else {
+                    roundTextE.visibility = View.VISIBLE
+                    roundReceived.visibility = View.GONE
+                    buttonLayoutHolder.visibility = View.GONE
+                    roundExchangeAmount.visibility = View.GONE
+                    buttonDone.visibility = View.GONE
+                }
+            }
+        }
+    }
+
+    private fun generateResult() {
+        binding.apply {
+            roundEditText.roundDismissKeyboardFrom(this@ExchangeActivity)
+            var roundFD: Double
+            val roundUD: Double = if (!Unique.isRoundEmptyString(roundEditText.text.toString())) {
+                try {
+                    roundEditText.text.toString().toDouble()
+                } catch (e: Exception) {
+                    0.0
+                }
+            } else {
+                0.0
+            }
+
+            try {
+
+                when (viewType) {
+
+                    CachedHolder.HandleKey.bc_round -> {
+                        roundFD = roundUD * 14.45
+                        roundExchangeAmount.text = resources.getString(R.string.round_rbx, DecimalFormat("#.####").format(roundFD))
+                    }
+
+                    CachedHolder.HandleKey.tbc_round -> {
+                        roundFD = roundUD * 29.25
+                        roundExchangeAmount.text = resources.getString(R.string.round_rbx, DecimalFormat("#.####").format(roundFD))
+                    }
+
+                    CachedHolder.HandleKey.obx_round -> {
+                        roundFD = roundUD * 89.65
+                        roundExchangeAmount.text = resources.getString(R.string.round_rbx, DecimalFormat("#.####").format(roundFD))
+                    }
+
+                    CachedHolder.HandleKey.rbx_round_do -> {
+                        roundFD = roundUD * 78.65
+                        roundExchangeAmount.text =
+                            resources.getString(R.string.round_dollar, DecimalFormat("#.####").format(roundFD))
+                    }
+
+                    CachedHolder.HandleKey.do_round_rbx -> {
+                        roundFD = roundUD * 54.75
+                        roundExchangeAmount.text = resources.getString(R.string.round_rbx, DecimalFormat("#.####").format(roundFD))
+                    }
+
+                }
+
+            } catch (e: Exception) {
+                roundFD = 00.00
+                roundExchangeAmount.text = roundFD.toString()
+            }
+        }
     }
 
     private fun triggerBackEvent(first: RoundStructureData?) {
