@@ -199,6 +199,15 @@ class ExchangeActivity : AppCompatActivity() {
                     buttonDone.visibility = View.GONE
                 }
             }
+
+            roundAppBar.roundPreviousButton.setOnClickListener {
+                onBackPressedDispatcher.onBackPressed()
+            }
+
+            buttonDone.setOnClickListener {
+                onBackPressedDispatcher.onBackPressed()
+            }
+
         }
     }
 
