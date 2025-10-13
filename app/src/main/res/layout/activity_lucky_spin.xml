@@ -7,4 +7,138 @@
     android:layout_height="match_parent"
     tools:context=".Panel.LuckySpinActivity">
 
+    <include
+        android:id="@+id/roundAppBar"
+        layout="@layout/app_bar_layout" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/buttonSpinNow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundAppBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/roundNoCostSpinLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:background="@drawable/round_small_text_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/roundNoCostSpin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/round_regular"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    tools:text="Free Spin:- 10" />
+
+            </LinearLayout>
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/roundMainLuckySpin"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="80dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/round_lucky_spin_main"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roundNoCostSpinLayout" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/roundMainLuckySpinTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/round_lucky_spin_top"
+                app:layout_constraintBottom_toBottomOf="@id/roundMainLuckySpin"
+                app:layout_constraintEnd_toEndOf="@id/roundMainLuckySpin"
+                app:layout_constraintStart_toStartOf="@id/roundMainLuckySpin"
+                app:layout_constraintTop_toTopOf="@id/roundMainLuckySpin"
+                app:layout_constraintVertical_bias="0.08" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/roundSpinTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/round_h_m"
+                android:layout_marginTop="@dimen/round_t_m"
+                android:fontFamily="@font/round_regular"
+                android:includeFontPadding="false"
+                android:text="@string/spin_earn_exciting_rewards"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roundMainLuckySpin" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/roundSpinSubTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/round_h_m"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/round_regular"
+                android:includeFontPadding="false"
+                android:text="@string/stand_a_chance_to_win_bag_full_of_this_app_s_for_spinning_the_wheel_of_fortune"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/roundSpinTitle" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSpinNow"
+        style="@style/buttonSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/round_t_m"
+        android:background="@drawable/round_button_bg"
+        android:paddingHorizontal="60dp"
+        android:text="@string/spin_now"
+        android:textColor="@color/white"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@id/buttonLayoutHolder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayoutHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/round_t_m"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include
+            android:id="@+id/headLineHolder"
+            layout="@layout/layout_round_bottom_view" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
