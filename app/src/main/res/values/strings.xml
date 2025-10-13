@@ -79,6 +79,12 @@
     <string name="spin_now">Spin Now</string>
     <string name="spin_earn_exciting_rewards"><![CDATA[Spin & Earn Exciting Rewards!]]></string>
     <string name="stand_a_chance_to_win_bag_full_of_this_app_s_for_spinning_the_wheel_of_fortune">Stand a chance to win bag full of this app\'s for spinning the wheel of fortune</string>
+    <string name="round_please_spin_tomorrow">Please spin tomorrow</string>
+    <string name="round_free_spin">Free Spin : %1$s</string>
+    <string name="round_added">%1$s Robox Added</string>
+    <string name="round_lucky_again">Spin Again</string>
+
+
 
 
 </resources>

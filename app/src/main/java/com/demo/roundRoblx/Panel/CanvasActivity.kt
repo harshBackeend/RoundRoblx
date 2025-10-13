@@ -126,6 +126,8 @@ class CanvasActivity : AppCompatActivity() {
         binding.roundAppBar.roundPreviousButton.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
+
+
     }
 
     private fun definedInfo(first: RoundStructureData) {
