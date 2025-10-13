@@ -1,11 +1,11 @@
 package com.demo.roundRoblx.Panel
 
-import android.R.attr.text
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
@@ -15,8 +15,11 @@ import com.demo.roundRoblx.assignmentData.RoundStructureData
 import com.demo.roundRoblx.databinding.ActivityCanvasBinding
 import com.demo.roundRoblx.various.BeginApplication
 import com.demo.roundRoblx.various.CachedHolder
+import com.demo.roundRoblx.various.CanvasDialog
 import com.demo.roundRoblx.various.HeadLineView
 import com.demo.roundRoblx.various.Unique
+import `in`.myinnos.androidscratchcard.ScratchCard
+import kotlin.random.Random
 
 class CanvasActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCanvasBinding
@@ -46,6 +49,7 @@ class CanvasActivity : AppCompatActivity() {
             } else {
                 binding.buttonLayoutHolder.visibility = View.GONE
             }
+            launchEvent(it?.first)
             triggerPushEvent(it?.first)
             triggerBackEvent(it?.first)
         }
@@ -53,6 +57,69 @@ class CanvasActivity : AppCompatActivity() {
         binding.headLineHolder.roundHeadLine.isSelected = true
         binding.headLineHolder.roundSubLine.isSelected = true
 
+    }
+
+    private fun launchEvent(first: RoundStructureData?) {
+        binding.apply {
+            roundCanvas.visibility = View.VISIBLE
+            roundCanvas.setScratchDrawable(
+                ContextCompat.getDrawable(this@CanvasActivity, R.drawable.round_scratch_card)
+            )
+
+            roundCanvas.setOnScratchListener(object : ScratchCard.OnScratchListener {
+                override fun onScratch(
+                    scratchCard: ScratchCard?,
+                    visiblePercent: Float
+                ) {
+                    if (visiblePercent > 0.5) {
+                        roundCanvas.visibility = View.GONE
+                    }
+
+                    var roundMoney =
+                        Unique.getRoundDataFromLocal(
+                            this@CanvasActivity,
+                            CachedHolder.CachedKey.round_rank
+                        )
+
+                    val roundMoneyUpdate = Random.nextInt(60, 300)
+
+                    CanvasDialog.viewCanvasDialog(
+                        this@CanvasActivity,
+                        roundMoneyUpdate.toString(),
+                        object : CanvasDialog.CanvasDialogEvent {
+                            override fun clamEvent() {
+                                if (!Unique.isRoundEmptyString(roundMoney)) {
+                                    val roundMoneyN: Int = roundMoney!!.toInt()
+                                    roundMoney = "${roundMoneyN + roundMoneyUpdate}"
+                                }
+
+                                Unique.setRoundDataHolder(
+                                    applicationContext,
+                                    CachedHolder.CachedKey.round_rank,
+                                    roundMoney
+                                )
+
+                                modifyMoney()
+                                if (first != null && first.round_small_2 != null && !Unique.isRoundEmptyString(
+                                        first.round_status
+                                    ) && first.round_status == "1" && first.round_small_2.isNotEmpty()
+                                ) {
+                                    definedInfo(first)
+                                    BeginApplication.showRoundRowTab(
+                                        this@CanvasActivity,
+                                        first.round_small_2.random().round_main_image?.toUri()
+                                    )
+                                }
+
+                                onBackPressedDispatcher.onBackPressed()
+
+                            }
+
+                        })
+                }
+
+            })
+        }
     }
 
     private fun triggerPushEvent(first: RoundStructureData?) {
