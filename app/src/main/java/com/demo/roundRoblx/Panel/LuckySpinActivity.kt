@@ -160,7 +160,7 @@ class LuckySpinActivity : AppCompatActivity() {
         rippleEffect.interpolator = DecelerateInterpolator()
         rippleEffect.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationEnd(p0: Animation?) {
-                var roundMoney = getRoundDataFromLocal(
+                val roundMoney = getRoundDataFromLocal(
                     this@LuckySpinActivity,
                     CachedHolder.CachedKey.round_rank
                 )
