@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/round_h_m"
+    android:layout_marginTop="@dimen/round_t_m"
+    android:background="@drawable/round_word_svg_bg"
+    android:elevation="5dp">
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/roundWordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/round_regular"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/roundLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/let_s_start" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/roundWordShare"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/round_word_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/roundLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_line_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundWordShare" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/roundWordSubTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginTop="@dimen/round_t_m"
+        android:fontFamily="@font/round_regular"
+        android:includeFontPadding="false"
+        android:textColor="@color/black_a_50"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roundLine"
+        tools:text="@string/let_s_start" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
