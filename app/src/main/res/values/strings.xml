@@ -85,6 +85,54 @@
     <string name="round_lucky_again">Spin Again</string>
 
 
+    <string name="round_aa">AA</string>
+    <string name="round_aa_d">AA is an acronym for Admin Abuse, which is when an administrator misuses their administrative powers.</string>
+    <string name="round_13">13+</string>
+    <string name="round_13_d">13+ means that something is only accessible or recommended to players who are aged 13 or over.</string>
+    <string name="round_1337">1337</string>
+    <string name="round_1337_d">1337 is another way to type the word LEET, as 1 looks like L, 3 looks like E and 7 looks like T. When used in Roblox, 1337 usually means elite, which is the word that leet comes from. 1337 can also refer</string>
+    <string name="round_abc_d">ABC isn\'t an acronym, and doesn\'t mean anything specific. It is a word that people use to respond to a request from another Roblox player. For example, one player might say ABC for free gear!,</string>
+    <string name="round_abc">ABC</string>
+    <string name="round_afk">AFK</string>
+    <string name="round_afk_d">AFK is an acronym for the phrase away from keyboard. Away from keyboard means, quite literally, that a player is going to be away from their computer and not available for a period of</string>
+    <string name="round_alias">Alias</string>
+    <string name="round_in_d">In Roblox, alias refers to aliases set through the alias feature. The alias feature allows players to set an alias - meaning a nickname - for their friends. Aliases are only visible to those who</string>
+    <string name="round_alt">Alt</string>
+    <string name="round_in">In Roblox, alt is a shortened form of the word alternate account. An alternate account is another Roblox account that a player uses that isn\'t a their main account. For example, if a player had two</string>
+    <string name="round_annually">Annually</string>
+    <string name="round_in_roblox">In Roblox, annually means the same as it does in the real word: that something happens once a year. If a subscription to Roblox Premium is charged annually, that means you pay once a</string>
+    <string name="round_beta">BETA</string>
+    <string name="round_in_roblox_beta">In Roblox, beta refers to a version of a game, or other object like an asset, that is available to play or use as a trial because it isn\'t yet fully finished or tested. Games and assets in a beta phase are</string>
+    <string name="round_brb">BRB</string>
+    <string name="round_brb_d">BRB is short for be right back, which means quite literally that a player will be unavailable for a short period of time (e.g. 30 seconds) but they will be right back. For example, if a player is leaving</string>
+    <string name="round_chile">Chile</string>
+    <string name="round_chile_d">In Roblox, chile can mean one of two things. It can mean chill: as in, chilled out and relaxed. Or it can mean child: as in a young person.</string>
+    <string name="round_dec">Dec</string>
+    <string name="in_roblox_the_word_dec">In Roblox, the word Dec is used before numbers and words in an attempt to bypass the chat filter. Because Roblox picks up Dec as December, it may mistakenly allow certain banned phrases or</string>
+    <string name="round_disc">Disc</string>
+    <string name="round_disc_d">Disc is a shortened form of the word Discord, which refers to the chat application. Discord is a banned word on Roblox to help protect members of the community from scams and inappropriate</string>
+    <string name="round_e_e">e.e</string>
+    <string name="round_in_roblox_e">In Roblox, e.e or e_e is a smilie (i.e. it\'s meant to look like a face) that signifies boredom or exhaustion.</string>
+    <string name="round_fe">FE</string>
+    <string name="round_in_roblox_fe_">In Roblox, FE is an acronym for Filtering Enabled. When filtering is enabled for a game, it means that changes made on the client aren\'t replicated on the server. This prevents cheaters from inserting</string>
+    <string name="round_ffs">FFS</string>
+    <string name="round_in_roblox_ffs">In Roblox, FFS is short for the phrase for fudge sake. This is a figure of speech that is used to express frustration or annoyance. Sometimes fudge is replaced with a much more profane word.</string>
+    <string name="round_lel">Lel</string>
+    <string name="round_in_roblox_lel">In Roblox, lel is a more playful and sarcastic way to say lol, which means laughing out loud. This means lel is often used to when something is funny or amusing.</string>
+    <string name="round_limited_u">Limited(U)</string>
+    <string name="round_in_roblox_limited">In Roblox, Limited (U) (meaning Limited Unique) items are items that only have a limited quantity available before they are discontinued. For example, a Limited (U) hat may only be sold 5,000</string>
+    <string name="round_gfx">GFX</string>
+    <string name="round_in_roblox_gfx">In Roblox, GFX has two meanings. Its first, and most simple, is a shortened form of the word graphics. Its second meaning refers to high-quality rendered images of Roblox</string>
+    <string name="round_gg">GG</string>
+    <string name="round_in_roblox_gg">In Roblox, GG is short for the phrase good game, which is the gaming equivalent of the phrase good job or nice. It is often used at the end of games to congratulate the other team. It may also be used</string>
+    <string name="round_hr">HR</string>
+    <string name="round_in_roblox_hr">In Roblox, HR is an acronym for the phrase High Rank, which refers to players who have high ranks on a server (i.e. they have more power and access to more features) or group.</string>
+    <string name="round_lmad">LMaD</string>
+    <string name="round_in_roblox_lmad">In Roblox, LMaD is an acronym for Let\'s Make a Deal. This acronym is used when two or more players want to make an agreement - for example, to trade a certain item. It was also the name of</string>
+    <string name="round_lmao">LMAO</string>
+    <string name="round_in_roblox_lmao">In Roblox, LMAO means Laughing My A** Off, which is an expression used to indicate that someone found something really funny.</string>
+
+
 
 
 </resources>

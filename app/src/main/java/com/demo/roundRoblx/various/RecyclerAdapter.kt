@@ -66,12 +66,18 @@ class RecyclerAdapter(val recyclerAdapterClick: RecyclerAdapterClick) :
         holder: RecyclerView.ViewHolder,
         position: Int
     ) {
-        if (holder is TutorialViewHolder) {
-            holder.combine(listOfInfoMain[position], position)
-        } else if (holder is WordViewHolder) {
-            holder.combine(listOfInfoMain[position], position)
-        } else if (holder is LayoutRoundMgBottomView) {
-            holder.combine(listOfInfoMain[position], position)
+        when (holder) {
+            is TutorialViewHolder -> {
+                holder.combine(listOfInfoMain[position], position)
+            }
+
+            is WordViewHolder -> {
+                holder.combine(listOfInfoMain[position], position)
+            }
+
+            is LayoutRoundMgBottomView -> {
+                holder.combine(listOfInfoMain[position], position)
+            }
         }
     }
 
