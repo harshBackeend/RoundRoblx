@@ -12,7 +12,7 @@
         layout="@layout/app_bar_layout" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/roundWordList"
+        android:id="@+id/roundTutorialList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
