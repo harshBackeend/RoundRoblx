@@ -66,59 +66,52 @@ class CanvasActivity : AppCompatActivity() {
                 ContextCompat.getDrawable(this@CanvasActivity, R.drawable.round_scratch_card)
             )
 
-            roundCanvas.setOnScratchListener(object : ScratchCard.OnScratchListener {
-                override fun onScratch(
-                    scratchCard: ScratchCard?,
-                    visiblePercent: Float
-                ) {
-                    if (visiblePercent > 0.5) {
-                        roundCanvas.visibility = View.GONE
-                    }
-
-                    var roundMoney =
-                        Unique.getRoundDataFromLocal(
-                            this@CanvasActivity,
-                            CachedHolder.CachedKey.round_rank
-                        )
-
-                    val roundMoneyUpdate = Random.nextInt(60, 300)
-
-                    CanvasDialog.viewCanvasDialog(
-                        this@CanvasActivity,
-                        roundMoneyUpdate.toString(),
-                        object : CanvasDialog.CanvasDialogEvent {
-                            override fun clamEvent() {
-                                if (!Unique.isRoundEmptyString(roundMoney)) {
-                                    val roundMoneyN: Int = roundMoney!!.toInt()
-                                    roundMoney = "${roundMoneyN + roundMoneyUpdate}"
-                                }
-
-                                Unique.setRoundDataHolder(
-                                    applicationContext,
-                                    CachedHolder.CachedKey.round_rank,
-                                    roundMoney
-                                )
-
-                                modifyMoney()
-                                if (first != null && first.round_small_2 != null && !Unique.isRoundEmptyString(
-                                        first.round_status
-                                    ) && first.round_status == "1" && first.round_small_2.isNotEmpty()
-                                ) {
-                                    definedInfo(first)
-                                    BeginApplication.showRoundRowTab(
-                                        this@CanvasActivity,
-                                        first.round_small_2.random().round_main_image?.toUri()
-                                    )
-                                }
-
-                                onBackPressedDispatcher.onBackPressed()
-
-                            }
-
-                        })
+            roundCanvas.setOnScratchListener { scratchCard, visiblePercent ->
+                if (visiblePercent > 0.5) {
+                    roundCanvas.visibility = View.GONE
                 }
 
-            })
+                var roundMoney =
+                    Unique.getRoundDataFromLocal(
+                        this@CanvasActivity,
+                        CachedHolder.CachedKey.round_rank
+                    )
+
+                val roundMoneyUpdate = Random.nextInt(60, 300)
+
+                CanvasDialog.viewCanvasDialog(
+                    this@CanvasActivity,
+                    roundMoneyUpdate.toString(),
+                    object : CanvasDialog.CanvasDialogEvent {
+                        override fun clamEvent() {
+                            if (!Unique.isRoundEmptyString(roundMoney)) {
+                                val roundMoneyN: Int = roundMoney!!.toInt()
+                                roundMoney = "${roundMoneyN + roundMoneyUpdate}"
+                            }
+
+                            Unique.setRoundDataHolder(
+                                applicationContext,
+                                CachedHolder.CachedKey.round_rank,
+                                roundMoney
+                            )
+
+                            modifyMoney()
+                            if (first != null && first.round_small_2 != null && !Unique.isRoundEmptyString(
+                                    first.round_status
+                                ) && first.round_status == "1" && first.round_small_2.isNotEmpty()
+                            ) {
+                                definedInfo(first)
+                                BeginApplication.showRoundRowTab(
+                                    this@CanvasActivity,
+                                    first.round_small_2.random().round_main_image?.toUri()
+                                )
+                            }
+
+                            finishAffinity()
+                        }
+
+                    })
+            }
         }
     }
 
