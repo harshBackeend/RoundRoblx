@@ -49,7 +49,10 @@ class FunnyActivity : AppCompatActivity(), RecyclerAdapter.RecyclerAdapterClick 
                     if (i % 4 == 0) {
                         roundFunnyList.add(
                             i,
-                            RoundStructureData.CatalogModel(roundBigLayout = it.first?.round_big?.random())
+                            RoundStructureData.CatalogModel(
+                                roundViewType = 1,
+                                roundBigLayout = it.first?.round_big?.random()
+                            )
                         )
                     }
                 }

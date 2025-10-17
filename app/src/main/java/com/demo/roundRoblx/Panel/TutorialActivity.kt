@@ -51,7 +51,10 @@ class TutorialActivity : AppCompatActivity(), RecyclerAdapter.RecyclerAdapterCli
                     if (i % 4 == 0) {
                         roundTutorialList.add(
                             i,
-                            RoundStructureData.CatalogModel(roundBigLayout = it.first?.round_big?.random())
+                            RoundStructureData.CatalogModel(
+                                roundViewType = 1,
+                                roundBigLayout = it.first?.round_big?.random()
+                            )
                         )
                     }
                 }

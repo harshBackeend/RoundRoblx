@@ -2,6 +2,7 @@ package com.demo.roundRoblx.Panel
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -49,7 +50,10 @@ class WordListActivity : AppCompatActivity(), RecyclerAdapter.RecyclerAdapterCli
                     if (i % 4 == 0) {
                         roundWordList.add(
                             i,
-                            RoundStructureData.CatalogModel(roundBigLayout = it.first?.round_big?.random())
+                            RoundStructureData.CatalogModel(
+                                roundViewType = 1,
+                                roundBigLayout = it.first?.round_big?.random()
+                            )
                         )
                     }
                 }

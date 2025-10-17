@@ -80,6 +80,10 @@ class TutorialFullActivity : AppCompatActivity() {
                     startActivity(Intent.createChooser(roundSendData, "Share via"))
                 }
             }
+
+            roundAppBar.roundPreviousButton.setOnClickListener {
+                onBackPressedDispatcher.onBackPressed()
+            }
         }
     }
 

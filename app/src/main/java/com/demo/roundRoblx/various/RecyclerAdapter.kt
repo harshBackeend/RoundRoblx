@@ -114,6 +114,7 @@ class RecyclerAdapter(val recyclerAdapterClick: RecyclerAdapterClick) :
         RecyclerView.ViewHolder(binding.root) {
         fun combine(model: RoundStructureData.CatalogModel, position: Int) {
             binding.apply {
+                layoutMiddle.roundBottomView.visibility = View.VISIBLE
                 Glide.with(binding.layoutMiddle.roundImageProfile)
                     .load(model.roundBigLayout?.round_p)
                     .into(binding.layoutMiddle.roundImageProfile)
