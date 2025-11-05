@@ -231,6 +231,17 @@
     <string name="dont_just_impulsively_buy_everything_that_catches_your_eye_plan_your_purchases_look_for_bundles_which_often_offer_a_better_value_for_your_robx_compare_prices_for_similar_items_across_different_sellers_and_remember_robx_can_be_used_for_more_than_just_cosmetic_items_game_passes_and_other_in_game_experiences_can_be_incredible_investments">Dont just impulsively buy everything that catches your eye. Plan your purchases! Look for bundles, which often offer a better value for your Robx. Compare prices for similar items across different sellers. And remember, Robx can be used for more than just cosmetic items; game passes and other in-game experiences can be incredible investments.</string>
     <string name="hunt_for_hidden_deals">Hunt for Hidden Deals</string>
     <string name="the_marketplace_is_a_dynamic_environment_so_prices_can_fluctuate_keep_checking_back_on_items_you_want_some_items_might_be_marked_down_or_offered_as_part_of_limited_time_promotions_be_patient_and_you_might_find_yourself_lucky_enough_to_snag_a_coveted_item_at_a_bargain_price">The Marketplace is a dynamic environment, so prices can fluctuate! Keep checking back on items you want. Some items might be marked down or offered as part of limited-time promotions. Be patient and you might find yourself lucky enough to snag a coveted item at a bargain price.</string>
+    <string name="win_free_robux">Win Free Robux</string>
+    <string name="get_your_robux_by_following_these_instructions">Get Your Robux By Following These Instructions:</string>
+    <string name="please_follow_the_step_by_step_process_instructions_below"><![CDATA[Please Follow The Step-By-Step Process &\nInstructions Below…]]></string>
+    <string name="step_1">Step 1:</string>
+    <string name="give_5_stars_ratings_with_review">Give 5 Stars Ratings With Review.</string>
+    <string name="give_5_stars">Give 5 Stars</string>
+    <string name="level">Level</string>
+    <string name="_1">1</string>
+    <string name="start_now">Start Now</string>
+    <string name="robox_quiz">Robox Quiz</string>
+    <string name="_5000">%1$s/5000</string>
 
 
 </resources>

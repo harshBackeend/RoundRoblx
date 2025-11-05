@@ -144,6 +144,7 @@
 
     <color name="black">#000000</color>
     <color name="black_a_50">#80000000</color>
+    <color name="black_a_40">#66000000</color>
     <color name="start_color">#298920</color>
     <color name="start_color_a_20">#33298920</color>
     <color name="end_color">#63E211</color>
