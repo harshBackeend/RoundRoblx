@@ -242,6 +242,7 @@
     <string name="start_now">Start Now</string>
     <string name="robox_quiz">Robox Quiz</string>
     <string name="_5000">%1$s/5000</string>
+    <string name="round_submit_answer">Submit Answer</string>
 
 
 </resources>
